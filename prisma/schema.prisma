@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String?  @unique
+  password  String?
+  role      String   @default("USER")
+  createdAt DateTime @default(now())
+
+  fitProfiles        FitProfile[]
+  nutritionSnapshots NutritionSnapshot[]
+  progressSnapshots  ProgressSnapshot[]
+  subscriptions      Subscription[]
+}
+
+model FitProfile {
+  id                  String   @id @default(cuid())
+  userId              String
+  goal                String?
+  objetivo            String?
+  level               String?
+  nivel               String?
+  location            String?
+  localTreino         String?
+  trainingDaysPerWeek Int?
+  diasTreino          Int?
+  minutesPerSession   Int?
+  duracaoTreino       Int?
+  dietStyle           String?
+  estiloDieta         String?
+  dietaryRestrictions String?
+  restricoes          String?
+  limitations         String?
+  limitacoes          String?
+  observations        String?
+  observacoes         String?
+  updatedAt           DateTime @updatedAt
+  createdAt           DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model NutritionSnapshot {
+  id        String   @id @default(cuid())
+  userId    String
+  calories  Int?
+  protein   Float?
+  carbs     Float?
+  fat       Float?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model ProgressSnapshot {
+  id        String   @id @default(cuid())
+  userId    String
+  weight    Float?
+  bodyFat   Float?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Subscription {
+  id        String   @id @default(cuid())
+  userId    String
+  plan      String   @default("FREE")
+  status    String   @default("active")
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
