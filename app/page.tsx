@@ -1,220 +1,264 @@
-export default function SmartShapePage() {
+import {
+  Camera,
+  CheckCircle2,
+  Play,
+  Sparkles,
+} from "lucide-react";
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-          <a href="/smartshape" className="text-2xl font-black">
+    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+          <a href="/" className="text-2xl font-black tracking-tight">
             Smart<span className="text-yellow-400">Shape</span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-base font-bold text-zinc-400 md:flex">
-            <a href="#solucao" className="hover:text-white">Solução</a>
-            <a href="#plataforma" className="hover:text-white">Plataforma</a>
-            <a href="#resultados" className="hover:text-white">Resultados</a>
-            <a href="#contato" className="hover:text-white">Contato</a>
+          <nav className="hidden items-center gap-10 text-sm font-semibold text-zinc-300 lg:flex">
+            <a href="#analisar" className="transition hover:text-yellow-400">
+              Analisar refeição
+            </a>
+            <a href="#painel" className="transition hover:text-yellow-400">
+              Painel
+            </a>
+            <a href="#planos" className="transition hover:text-yellow-400">
+              Planos
+            </a>
+            <a href="#contato" className="transition hover:text-yellow-400">
+              Contato
+            </a>
           </nav>
 
           <a
             href="/smartshape/login"
-            className="rounded-full bg-yellow-400 px-6 py-3 text-sm font-black text-black hover:bg-yellow-300"
+            className="rounded-full border border-yellow-400/40 px-7 py-3 text-sm font-black text-white transition hover:bg-yellow-400 hover:text-black"
           >
             Entrar
           </a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden px-6 pt-4 pb-20">
-        <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-yellow-400/20 blur-[140px]" />
+      <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_78%_28%,rgba(250,204,21,0.28),transparent_30%),linear-gradient(135deg,#050505_0%,#090909_40%,#171100_100%)]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px]" />
+        <div className="absolute right-[-120px] top-[40px] h-[760px] w-[760px] rounded-full border border-yellow-400/20" />
+        <div className="absolute right-[-40px] top-[120px] h-[600px] w-[600px] rounded-full border border-yellow-400/10" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+        <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-16 px-6 py-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-6 inline-flex rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-black text-yellow-300">
-              Powered by MacroLens
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-yellow-300">
+              <Sparkles size={14} />
+              IA Fitness e Nutrição
             </div>
 
-            <h1 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-              Inteligência fitness para redes que querem{" "}
-              <span className="text-yellow-400">reter mais.</span>
+            <h1 className="max-w-2xl text-[52px] font-black leading-[0.95] tracking-[-0.06em] md:text-[74px]">
+              Inteligência fitness para quem busca{" "}
+              <span className="text-yellow-400">resultados reais.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
-              Treino, nutrição, análise alimentar por foto, prontuário fitness
-              e analytics em uma plataforma inteligente para aumentar
-              engajamento, retenção e evolução dos alunos.
+            <p className="mt-8 max-w-xl text-lg leading-9 text-zinc-300">
+              Analise refeições por foto, acompanhe calorias, macros, treinos e
+              evolução com IA que entende seu objetivo e entrega insights
+              práticos.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="/smartshape/login"
-                className="rounded-full bg-yellow-400 px-8 py-4 text-sm font-black text-black hover:bg-yellow-300"
+                href="/smartshape/analisar"
+                className="inline-flex items-center gap-2 rounded-full bg-yellow-400 px-8 py-4 text-sm font-black text-black shadow-[0_20px_60px_rgba(250,204,21,0.28)] transition hover:bg-yellow-300"
               >
-                Acessar plataforma
+                Analisar refeição agora
+                <Camera size={18} />
               </a>
 
               <a
-                href="#plataforma"
-                className="rounded-full border border-white/15 px-8 py-4 text-sm font-black text-white hover:border-yellow-400"
+                href="#analisar"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-4 text-sm font-black transition hover:border-yellow-400 hover:text-yellow-400"
               >
+                <Play size={16} />
                 Ver como funciona
               </a>
             </div>
           </div>
 
-          <div className="relative rounded-[2.5rem] border border-white/10 bg-zinc-950 p-5 shadow-2xl">
-            <div className="rounded-[2rem] bg-[#111] p-6">
-              <div className="mb-8 flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-zinc-500">Dashboard IA</p>
-                  <h2 className="text-2xl font-black">Rede Fitness</h2>
-                </div>
-                <span className="rounded-full bg-yellow-400 px-4 py-2 text-xs font-black text-black">
-                  LIVE
-                </span>
-              </div>
+          <div className="relative flex min-h-[720px] items-center justify-center">
+            <img
+              src="/hero-smartshape-ui.png"
+              alt="SmartShape app"
+              className="relative z-10 w-full max-w-[860px]"
+            />
+          </div>
+        </div>
+      </section>
 
-              <div className="grid gap-4 sm:grid-cols-3">
-                <Metric value="+32%" label="retenção" />
-                <Metric value="+41%" label="engajamento" />
-                <Metric value="-18%" label="evasão" />
-              </div>
+      <section id="analisar" className="bg-white px-6 py-24 text-black">
+        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-500">
+              Análise alimentar por IA
+            </p>
 
-              <div className="mt-6 rounded-3xl bg-black p-5">
-                <p className="mb-4 text-sm font-black text-yellow-400">
-                  Análise alimentar por IA
-                </p>
+            <h2 className="mt-4 text-5xl font-black leading-tight tracking-[-0.04em]">
+              Tire uma foto.
+              <br />
+              Receba <span className="text-yellow-500">insights.</span>
+            </h2>
 
-                <div className="flex h-40 items-end gap-3 rounded-2xl bg-gradient-to-br from-zinc-800 to-black p-4">
-                  {[42, 66, 90, 55, 76].map((h) => (
+            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
+              Nossa IA identifica os alimentos, calcula macros, calorias e
+              índice glicêmico em segundos.
+            </p>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <img
+              src="/hero-smartshape-ui.png"
+              alt="Análise alimentar SmartShape"
+              className="w-full max-w-[980px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="painel"
+        className="border-y border-white/10 bg-[#050505] px-6 py-24"
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-400">
+              Painel inteligente
+            </p>
+
+            <h2 className="mt-4 text-5xl font-black leading-tight tracking-[-0.05em]">
+              Seu progresso,
+              <br />
+              em <span className="text-yellow-400">um só lugar.</span>
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-zinc-400">
+              Acompanhe métricas, evolução, treinos e alimentação com
+              dashboards completos e personalizados.
+            </p>
+          </div>
+
+          <div className="rounded-[2.5rem] border border-white/10 bg-black p-6 shadow-[0_35px_100px_rgba(0,0,0,0.5)]">
+            <div className="mb-6 flex items-center gap-2 text-sm text-green-400">
+              <CheckCircle2 size={16} />
+              Dados atualizados em tempo real
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-4">
+              <MiniCard title="Gasto calórico" value="1.842 kcal" />
+              <MiniCard title="Treinos concluídos" value="12" />
+              <MiniCard title="Sequência" value="7 dias" />
+              <MiniCard title="IG médio" value="52" />
+            </div>
+
+            <div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+              <div className="rounded-3xl border border-white/10 bg-[#0d0d0d] p-5">
+                <p className="text-sm font-black">Evolução de calorias</p>
+
+                <div className="mt-5 flex h-48 items-end gap-4">
+                  {[45, 58, 72, 50, 80, 62, 86].map((height) => (
                     <div
-                      key={h}
-                      className="flex-1 rounded-t-xl bg-yellow-400"
-                      style={{ height: `${h}%` }}
+                      key={height}
+                      className="flex-1 rounded-t-2xl bg-yellow-400"
+                      style={{ height: `${height}%` }}
                     />
                   ))}
                 </div>
+              </div>
 
-                <div className="mt-4 grid grid-cols-3 gap-3 text-center text-xs">
-                  <Box title="Kcal" value="682" />
-                  <Box title="Proteína" value="38g" />
-                  <Box title="IG" value="54" />
+              <div className="rounded-3xl border border-white/10 bg-[#0d0d0d] p-5">
+                <p className="text-sm font-black">Distribuição de macros</p>
+
+                <div className="mt-8 flex items-center gap-6">
+                  <div className="h-36 w-36 rounded-full border-[20px] border-yellow-400 border-r-green-400 border-b-orange-400" />
+
+                  <div className="space-y-3 text-sm text-zinc-400">
+                    <p>Proteínas — 38%</p>
+                    <p>Carboidratos — 42%</p>
+                    <p>Gorduras — 20%</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="border-y border-white/10 bg-[#0A0A0A] px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="max-w-5xl text-4xl font-black tracking-tight md:text-6xl">
-            O problema não é vender matrícula.
-            <span className="text-yellow-400"> É manter o aluno ativo.</span>
-          </h2>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            <Info title="Baixo acompanhamento" text="O aluno treina, mas muitas vezes não recebe orientação contínua fora da academia." />
-            <Info title="Nutrição desconectada" text="A alimentação real do aluno não conversa com treino, evolução e objetivos." />
-            <Info title="Evasão silenciosa" text="A rede só percebe a queda de engajamento quando o cancelamento já está próximo." />
-          </div>
-        </div>
-      </section>
-
-      <section id="plataforma" className="px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black uppercase tracking-[0.35em] text-yellow-400">
-            Plataforma
+      
+      <section id="planos" className="bg-white px-6 py-24 text-black">
+        <div className="mx-auto max-w-6xl rounded-[3rem] bg-yellow-400 p-12">
+          <p className="text-xs font-black uppercase tracking-[0.22em]">
+            Planos SmartShape
           </p>
 
-          <h2 className="mt-5 max-w-5xl text-4xl font-black tracking-tight md:text-6xl">
-            Tudo que uma rede fitness precisa em uma experiência digital inteligente.
+          <h2 className="mt-4 max-w-3xl text-5xl font-black leading-tight tracking-[-0.05em]">
+            Transforme alimentação, treino e evolução em resultado real.
           </h2>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            <Info title="Análise alimentar por foto" text="IA que identifica alimentos, calcula macros, calorias e índice glicêmico." />
-            <Info title="Treino inteligente" text="Treinos adaptados por objetivo, frequência, nível e evolução." />
-            <Info title="Nutrição personalizada" text="Planos alimentares conectados ao perfil e comportamento do aluno." />
-            <Info title="Prontuário fitness" text="Histórico, metas, medidas, objetivos e acompanhamento." />
-            <Info title="Gamificação" text="Desafios, evolução, recompensas e motivação contínua." />
-            <Info title="Analytics da rede" text="Indicadores de retenção, engajamento e risco de evasão." />
-          </div>
-        </div>
-      </section>
-
-      <section id="resultados" className="px-6 py-20">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-yellow-400 p-10 text-black">
-          <p className="text-sm font-black uppercase tracking-[0.3em]">
-            Impacto estimado
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-black/70">
+            Uma experiência premium inspirada nos maiores apps fitness do
+            mercado.
           </p>
-          <h2 className="mt-5 max-w-4xl text-4xl font-black md:text-6xl">
-            IA não é só funcionalidade. É retenção, recorrência e dados.
-          </h2>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <Impact value="+32%" label="retenção potencial" />
-            <Impact value="+41%" label="engajamento no app" />
-            <Impact value="-18%" label="risco de cancelamento" />
-          </div>
         </div>
       </section>
 
-      <section id="contato" className="px-6 py-20 text-center">
-        <h2 className="mx-auto max-w-4xl text-5xl font-black md:text-7xl">
-          O futuro digital das academias começa agora.
-        </h2>
+      <footer
+        id="contato"
+        className="border-t border-white/10 bg-black px-6 py-12"
+      >
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-4">
+          <div>
+            <p className="text-2xl font-black text-white">
+              Smart<span className="text-yellow-400">Shape</span>
+            </p>
 
-        <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
-          SmartShape é um conceito enterprise baseado na engine MacroLens para
-          aumentar retenção com tecnologia.
-        </p>
+            <p className="mt-3 text-sm leading-6 text-zinc-500">
+              IA fitness, nutrição e evolução em uma única plataforma.
+            </p>
+          </div>
 
-        <a
-          href="/smartshape/login"
-          className="mt-8 inline-flex rounded-full bg-yellow-400 px-9 py-4 text-sm font-black text-black hover:bg-yellow-300"
-        >
-          Solicitar apresentação
-        </a>
-      </section>
+          <div>
+            <h4 className="font-black text-white">Produto</h4>
+            <div className="mt-4 space-y-2 text-sm text-zinc-500">
+              <p>Analisar refeição</p>
+              <p>Painel</p>
+              <p>Planos</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-black text-white">Empresa</h4>
+            <div className="mt-4 space-y-2 text-sm text-zinc-500">
+              <p>Sobre</p>
+              <p>Contato</p>
+              <p>Privacidade</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-black text-white">Contato</h4>
+            <p className="mt-4 text-sm text-zinc-500">
+              contato@smartfitshape.com.br
+            </p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-xs text-zinc-600">
+          © 2026 SmartShape. Todos os direitos reservados.
+        </div>
+      </footer>
     </main>
   );
 }
 
-function Metric({ value, label }: { value: string; label: string }) {
+function MiniCard({ title, value }: { title: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-black p-4">
-      <p className="text-2xl font-black text-yellow-400">{value}</p>
-      <p className="mt-1 text-xs uppercase tracking-widest text-zinc-500">
-        {label}
-      </p>
-    </div>
-  );
-}
-
-function Box({ title, value }: { title: string; value: string }) {
-  return (
-    <div className="rounded-xl bg-zinc-900 p-3">
-      <p className="text-zinc-500">{title}</p>
-      <p className="mt-1 font-black text-white">{value}</p>
-    </div>
-  );
-}
-
-function Info({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="rounded-3xl border border-white/10 bg-black p-7">
-      <div className="mb-6 h-12 w-12 rounded-2xl bg-yellow-400" />
-      <h3 className="text-xl font-black">{title}</h3>
-      <p className="mt-3 leading-relaxed text-zinc-400">{text}</p>
-    </div>
-  );
-}
-
-function Impact({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-3xl bg-black p-7 text-white">
-      <p className="text-5xl font-black text-yellow-400">{value}</p>
-      <p className="mt-3 text-sm font-bold uppercase tracking-widest text-zinc-400">
-        {label}
-      </p>
+    <div className="rounded-2xl border border-white/10 bg-[#121212] p-4">
+      <p className="text-[11px] text-zinc-500">{title}</p>
+      <p className="mt-3 text-2xl font-black">{value}</p>
+      <p className="mt-3 text-xs font-black text-green-400">+12%</p>
     </div>
   );
 }
